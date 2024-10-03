@@ -23,19 +23,19 @@ interface GameStore {
 const useGameStore = create<GameStore>((set) => ({
     players: [
         {
-            name: '1'
+            name: ''
         },
         {
-            name: '2'
+            name: ''
         },
         {
-            name: '3'
+            name: ''
         }
     ],
-    missions: gameService.generateRandomElementsUntilMaxSum(10, 0),
-    difficulty: 10,
+    missions: [],
+    difficulty: 1,
     error: "",
-    gameStarted: true,
+    gameStarted: false,
     addPlayer: (newPlayer: PlayerInfo) => set(produce((state: GameStore) => {
         if(state.players.length >= 5) {
             return
