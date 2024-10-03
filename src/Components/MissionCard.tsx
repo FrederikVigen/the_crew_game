@@ -24,7 +24,7 @@ export default function MissionCard(props: MissionCardProps) {
                 <div>{isRegularPlayingCards ? props.mission.cardTextPlayingCards : props.mission.cardTextOriginal}</div>
             </Stack>
             <Divider className='mt-1 mb-1'/> 
-            <Stack className='w-full md:h-1/2'>
+            <Stack className='w-full'>
                 {
                     selectedPlayer ?
                     <Stack direction='row' className='justify-center items-center space-x-3'>
