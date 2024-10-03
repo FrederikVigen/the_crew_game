@@ -4,31 +4,37 @@ import { Stack } from './BaseComponents/Stack'
 import { BigHeader } from './BaseComponents/BigHeader'
 import { SmallHeader } from './BaseComponents/SmallHeader'
 import PlayerInputRow from './PlayerInputRow'
-import { gameStore } from './Store/Store'
+import { gameStore } from './Store/GameStore'
 import { Button } from './BaseComponents/Button'
+import { Divider } from './BaseComponents/Divider'
+import { Input } from './BaseComponents/Input'
 
 export default function LandingPage() {
     const players = gameStore.use.players()
     const addPlayer = gameStore.use.addPlayer()
     const startGame = gameStore.use.startGame()
     const error = gameStore.use.error()
+    const difficulty = gameStore.use.difficulty()
+    const updateDifficulty = gameStore.use.updateDifficulty()
 
     return (
-        <Paper className='p-5'>
+        <Paper className='w-1/3 h-1/3 flex flex-col justify-center'>
             <Stack className='mb-5'>
                 <BigHeader>The Crew</BigHeader>
                 <SmallHeader>Mission Deep Sea</SmallHeader>
             </Stack>
-            <Stack spacing={3}>
+            <Stack spacing={3} className='items-center'>
                 {
                     players.map((p, i) => <PlayerInputRow key={i} index={i} playerInfo={p} />)
                 }
+                <Divider className='w-1/2' />
+                <Input value={difficulty} onChange={(e) => updateDifficulty(Number(e.target.value))} className='text-center w-1/3' type='number' placeholder='Difficulty' min='1' max='30'/>
                 <Stack spacing={2} direction='row'>
                     <Button disabled={players.length >= 5} onClick={() => addPlayer({ name: '' })}>Add Player</Button>
                     <Button onClick={() => startGame()}>Start Game</Button>
                 </Stack>
                 { error != "" &&
-                    <span className='text-red-500'>{error}</span>
+                    <span className='text-red-500 text-center'>{error}</span>
                 }
             </Stack>
         </Paper>

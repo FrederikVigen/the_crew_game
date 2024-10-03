@@ -1,5 +1,5 @@
 import { MainContainer } from './BaseComponents/MainContainer'
-import { gameStore } from './Store/Store'
+import { gameStore } from './Store/GameStore'
 import LandingPage from './LandingPage'
 import GamePage from './GamePage'
 

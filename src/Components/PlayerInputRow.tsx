@@ -2,7 +2,7 @@ import React from 'react'
 import { Stack } from './BaseComponents/Stack'
 import { Input } from './BaseComponents/Input'
 import { PlayerInfo } from './Models/PlayerInfo'
-import { gameStore } from './Store/Store'
+import { gameStore } from './Store/GameStore'
 import { CameraIcon, MinusCircleIcon, MinusIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 export interface PlayerInputRowProps {
