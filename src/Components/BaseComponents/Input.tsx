@@ -6,4 +6,5 @@ export const Input = tw.input`
     text-m
     pl-4
     text-black
+    
 `

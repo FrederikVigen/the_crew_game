@@ -5,7 +5,6 @@ import { StoreApi, UseBoundStore } from 'zustand'
 import { Mission } from "../Models/Mission"
 import { gameService } from "../Services/GameService"
 
-
 interface GameStore {
     players: PlayerInfo[]
     addPlayer: (newPlayer: PlayerInfo) => void
@@ -18,6 +17,8 @@ interface GameStore {
     updateDifficulty: (newDifficulty: number) => void
     missions: Mission[]
     endGame: () => void
+    isRegularPlayingCards: boolean
+    setIsRegularPlayingCards: (isRegularPlayingCards: boolean) => void
 }
 
 const useGameStore = create<GameStore>((set) => ({
@@ -36,6 +37,7 @@ const useGameStore = create<GameStore>((set) => ({
     difficulty: 1,
     error: "",
     gameStarted: false,
+    isRegularPlayingCards: false,
     addPlayer: (newPlayer: PlayerInfo) => set(produce((state: GameStore) => {
         if(state.players.length >= 5) {
             return
@@ -79,6 +81,9 @@ const useGameStore = create<GameStore>((set) => ({
         state.error = ""
         state.difficulty = 1
         state.gameStarted = false
+    })),
+    setIsRegularPlayingCards: (isRegularPlayingCards: boolean) => set(produce((state: GameStore) => {
+        state.isRegularPlayingCards = isRegularPlayingCards
     }))
 }))
 

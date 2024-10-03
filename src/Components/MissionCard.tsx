@@ -14,13 +14,14 @@ export interface MissionCardProps {
 export default function MissionCard(props: MissionCardProps) {
     const players = gameStore.use.players()
     const [selectedPlayer, setSelectedPlayer] = useState<PlayerInfo | undefined>(undefined)
+    const isRegularPlayingCards = gameStore.use.isRegularPlayingCards()
 
     return (
         <Paper className='w-full md:w-1/4'>
             <div>Mission Difficulty: {props.mission.difficulties[players.length - 3]}</div>
             <Divider className='mt-1 mb-1' />
             <Stack className='w-full md:h-1/2'>
-                <div>{props.mission.cardText}</div>
+                <div>{isRegularPlayingCards ? props.mission.cardTextPlayingCards : props.mission.cardTextOriginal}</div>
             </Stack>
             <Divider className='mt-1 mb-1'/> 
             <Stack className='w-full md:h-1/2'>

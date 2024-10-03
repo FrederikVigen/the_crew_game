@@ -1,4 +1,5 @@
 export interface Mission {
     difficulties: number[]
-    cardText: string
+    cardTextOriginal: string
+    cardTextPlayingCards: string
 }
