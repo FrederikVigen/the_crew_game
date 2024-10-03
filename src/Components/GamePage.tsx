@@ -11,11 +11,13 @@ export default function GamePage() {
   const missions = gameStore.use.missions()
   const difficulty = gameStore.use.difficulty()
   const endGame = gameStore.use.endGame()
+  const isRegularPlayingCards = gameStore.use.isRegularPlayingCards()
 
   return (
     <Stack className='items-center w-3/4' spacing={3}>
       <Paper className='p-5'>
         <SmallHeader>Difficulty: {difficulty}</SmallHeader>
+        <span className='text-center text-2xl'>Card Type: {isRegularPlayingCards ? "Regular Playing cards" : "Original Crew Cards"}</span>
       </Paper>
       <div className='flex justify-center flex-col w-full space-y-3 md:*:mt-3 md:space-x-3 md:flex-row md:flex-wrap'>
         {
