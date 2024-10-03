@@ -23,7 +23,7 @@ export default function LandingPage() {
     const isRegularPlayingCards = gameStore.use.isRegularPlayingCards()
 
     return (
-        <Paper className='w-1/3 h-1/3 flex flex-col justify-center'>
+        <Paper className='h-1/3 flex flex-col p-10 md:w-1/3 justify-center'>
             <Stack className='mb-5'>
                 <BigHeader>The Crew</BigHeader>
                 <SmallHeader>Mission Deep Sea</SmallHeader>
