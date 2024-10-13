@@ -76,7 +76,7 @@ export const allMissions: Mission[] = [
         "type_specifics": {
             "amount_of_tricks": 5,
             "exactly": true,
-            "in_row": true,
+            "in_row": false,
             "position": "FIRST",
             "not_win": true
         }
@@ -124,7 +124,7 @@ export const allMissions: Mission[] = [
         "type_specifics": {
             "amount_of_tricks": 3,
             "exactly": false,
-            "in_row": true,
+            "in_row": false,
             "position": "FIRST",
             "not_win": true
         }
@@ -172,7 +172,7 @@ export const allMissions: Mission[] = [
         "type_specifics": {
             "amount_of_tricks": 4,
             "exactly": false,
-            "in_row": true,
+            "in_row": false,
             "position": "FIRST",
             "not_win": true
         }
@@ -236,7 +236,7 @@ export const allMissions: Mission[] = [
         "type_specifics": {
             "amount_of_tricks": 3,
             "exactly": false,
-            "in_row": true,
+            "in_row": false,
             "position": "FIRST",
             "not_win": false
         }
@@ -317,7 +317,7 @@ export const allMissions: Mission[] = [
         "type_specifics": {
             "amount_of_tricks": 1,
             "exactly": true,
-            "in_row": true,
+            "in_row": false,
             "position": "FIRST",
             "not_win": false
         }

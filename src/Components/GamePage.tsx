@@ -20,10 +20,10 @@ export default function GamePage() {
         <SmallHeader>Difficulty: {difficulty}</SmallHeader>
         <span className='text-center text-2xl'>Card Type: {isRegularPlayingCards ? "Regular Playing cards" : "Original Crew Cards"}</span>
       </Paper>
-      {/* <MissionCard mission={missions.filter(m => m.cardText == "I will win pink 1 and green 7")[0]}/> */}
       <div className='flex justify-center flex-col w-full space-y-3 md:*:mt-3 md:space-x-3 md:flex-row md:flex-wrap'>
         {
-          missions.filter(m => m.type == 'specific').map(m => <MissionCard mission={m} />)
+          missions.filter(m => m.type == 'trick_winning').map(m => <MissionCard mission={m} />)
+          // missions.filter(m => m.type == 'specific').map(m => <MissionCard mission={m} />)
         }
       </div>
       <Card suit='H' value='3' flipped />
