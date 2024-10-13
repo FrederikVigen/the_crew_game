@@ -19,8 +19,8 @@ export default function LandingPage() {
     const error = gameStore.use.error()
     const difficulty = gameStore.use.difficulty()
     const updateDifficulty = gameStore.use.updateDifficulty()
-    const setIsRegularPlayingCards = gameStore.use.setIsRegularPlayingCards()
-    const isRegularPlayingCards = gameStore.use.isRegularPlayingCards()
+    // const setIsRegularPlayingCards = gameStore.use.setIsRegularPlayingCards()
+    // const isRegularPlayingCards = gameStore.use.isRegularPlayingCards()
 
     return (
         <Paper className='h-1/3 flex flex-col p-10 md:w-1/3 justify-center rounded-lg'>
@@ -37,11 +37,11 @@ export default function LandingPage() {
                     label='Difficulty'
                     input={<Input value={difficulty} onChange={(e) => updateDifficulty(Number(e.target.value))} className='text-center' type='number' placeholder='Difficulty' min='1' max='30' />}
                 />
-                <Divider className='w-1/2' />
-                <InputWithLabel
+                {/* <Divider className='w-1/2' /> */}
+                {/* <InputWithLabel
                     label='Play with regular card game'
                     input={<Checkbox checked={isRegularPlayingCards} onChange={(e) => setIsRegularPlayingCards(e.target.checked)} icon={<Cog6ToothIcon />} />}
-                />
+                /> */}
                 <Stack spacing={2} direction='row'>
                     <Button disabled={players.length >= 5} onClick={() => addPlayer({ name: '' })}>Add Player</Button>
                     <Button onClick={() => startGame()}>Start Game</Button>
