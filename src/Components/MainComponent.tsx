@@ -7,7 +7,7 @@ export default function MainComponent() {
     const gameStarted = gameStore.use.gameStarted()
 
     return (
-        <MainContainer className='pattern-background'>
+        <MainContainer>
             {
                 gameStarted ? 
                 <GamePage/> :
