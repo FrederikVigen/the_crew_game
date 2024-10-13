@@ -4,8 +4,8 @@
 
 .pattern-background::before {
     content: '';
-    background-position: -35px;
-    background-size: 200px;
+    background-size: 150%;
+    background-repeat: no-repeat;
     background-image: url('./assets/background.svg');
     position:absolute;
     width: 200%;
@@ -14,8 +14,13 @@
     left: -50%;
     z-index:-1;
     background-color: #1e293b;
-    transform: rotate(-30deg);
     opacity: 0.3;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1) rotate(-30deg);
+    filter: FlipH;
+    -ms-filter: "FlipH";
 }
 
 .pattern-background::after {
