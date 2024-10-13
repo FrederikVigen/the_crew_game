@@ -4,6 +4,7 @@ import { produce } from "immer"
 import { StoreApi, UseBoundStore } from 'zustand'
 import { Mission } from "../Models/Mission"
 import { gameService } from "../Services/GameService"
+import { allMissions } from "../../Data/AllMissions"
 
 interface GameStore {
     players: PlayerInfo[]
@@ -24,19 +25,19 @@ interface GameStore {
 const useGameStore = create<GameStore>((set) => ({
     players: [
         {
-            name: ''
+            name: 'Frede'
         },
         {
-            name: ''
+            name: 'Anton'
         },
         {
-            name: ''
+            name: 'Sujee'
         }
     ],
-    missions: [],
-    difficulty: 1,
+    missions: allMissions,
+    difficulty: 15,
     error: "",
-    gameStarted: false,
+    gameStarted: true,
     isRegularPlayingCards: false,
     addPlayer: (newPlayer: PlayerInfo) => set(produce((state: GameStore) => {
         if(state.players.length >= 5) {

@@ -11,18 +11,17 @@ export const MainContainer = tw.div `
     items-center
     pt-5
     pb-5
-    before:bg-no-repeat
     before:bg-[url('./assets/background.svg')]
-    before:!bg-[length:150%]
     before:absolute
-    before:w-[200%]
-    before:h-[200%]
-    before:top-[-50%]
-    before:left-[-50%]
     before:-z-10
-    before:rotate-[30deg]
     before:scale-x-[-1]
     before:opacity-30
+    before:bg-[length:40%]
+    before:rotate-[30deg]
+    before:bg-top
+    before:w-[1000vh]
+    before:h-[100%]
+    before:bg-no-repeat
     after:content-['']
     after:absolute
     after:w-full
