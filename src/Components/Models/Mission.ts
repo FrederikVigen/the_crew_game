@@ -10,10 +10,11 @@ export interface Mission {
         not_win?: boolean
         extra_info?: string
         left?: string
-        right?: string | number | number[]
+        right?: (string | number)[]
         comparisson?: string
         in_one_trick?: boolean
         specific_cards?: string[]
         is_even?: boolean
+        different_spelling?: boolean
     }
 }

@@ -9,6 +9,7 @@ import { Button } from './BaseComponents/Button'
 import SpecificMission from './CardTypes/SpecificMission'
 import TrickWinningMission from './CardTypes/TrickWinningMission'
 import EvenOdd from './CardTypes/EvenOdd'
+import MoreLess from './CardTypes/MoreLess'
 
 export interface MissionCardProps {
     mission: Mission
@@ -28,7 +29,7 @@ export default function MissionCard(props: MissionCardProps) {
 
     const cardElements: { [key: string]: JSX.Element } = {
         'trick_winning': <TrickWinningMission mission={props.mission} />,
-        'more_or_less': <></>,
+        'more_or_less': <MoreLess mission={props.mission}/>,
         'specific': <SpecificMission mission={props.mission} />,
         'even_odd': <EvenOdd mission={props.mission}/>,
         'all_of_one': <span className='text-2xl'>All the cards in at least one of the 4 colors</span>,
@@ -52,7 +53,6 @@ export default function MissionCard(props: MissionCardProps) {
             <Stack className='w-full md:h-2/3 text-center'>
                 <span className='mb-1 text-xl'>{cardHeader.join(" ")}</span>
                 {cardElements[props.mission.type]}
-                {/* <div>{props.mission.cardText}</div> */}
             </Stack>
             <Divider className='mt-1 mb-1' />
             <Stack className='w-full'>

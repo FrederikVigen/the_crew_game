@@ -9,9 +9,6 @@ export interface TrickWinningMissionProps {
 export default function TrickWinningMission(props: TrickWinningMissionProps) {
   const amountOfTricks = props.mission.type_specifics?.amount_of_tricks!
   const position = props.mission.type_specifics?.position
-  const cardFooter = [
-    {}
-  ]
 
   const centerText = {
     'FIRST': amountOfTricks != 1 ? `the first ${amountOfTricks ?? 'X'}` : 'the first',

@@ -4,6 +4,7 @@ import { translateCard } from "./Services/PlayingCardTranslator"
 export interface CardDisplayer {
   cards: string[]
   displayBadge?: boolean
+  size?: 'md' | 'sm' | 'lg'
 }
 
 export default function CardDisplayer(props: CardDisplayer) {
@@ -39,8 +40,17 @@ export default function CardDisplayer(props: CardDisplayer) {
     4: [['90px', '35%'], ['90px', '35%'], ['90px', '35%'],[ '90px', '35%']]
   }[totalCardsToDisplay]
 
+  const sizing = {
+    'sm': [45, 70],
+    'md': [67.5, 105],
+    'lg': [90, 140]
+  }
+
   return (
-    <div className="relative w-[90px] h-[140px]">
+    <div style={{
+      width: `${sizing[props.size ?? 'lg'][0]}px`,
+      height: `${sizing[props.size ?? 'lg'][1]}px`
+    }} className="relative">
       {
         Object.keys(cardCount).map((key, i) => {
           const translatedCard = translateCard(key)

@@ -348,7 +348,7 @@ export const allMissions: Mission[] = [
         "type": "more_or_less",
         "type_specifics": {
             "left": "I",
-            "right": "COMMANDER",
+            "right": ["COMMANDER"],
             "comparisson": ">",
             "in_one_trick": false
         }
@@ -363,7 +363,7 @@ export const allMissions: Mission[] = [
         "type": "more_or_less",
         "type_specifics": {
             "left": "I",
-            "right": "COMMANDER",
+            "right": ["COMMANDER"],
             "comparisson": "=",
             "in_one_trick": false
         }
@@ -378,7 +378,7 @@ export const allMissions: Mission[] = [
         "type": "more_or_less",
         "type_specifics": {
             "left": "I",
-            "right": "ANYONE",
+            "right": ["ANYONE"],
             "comparisson": ">",
             "in_one_trick": false
         }
@@ -394,7 +394,7 @@ export const allMissions: Mission[] = [
         "type_specifics": {
             "extra_info": "0 blue cards allowed",
             "left": "Y",
-            "right": "B",
+            "right": ["B"],
             "comparisson": ">",
             "in_one_trick": false
         }
@@ -410,7 +410,7 @@ export const allMissions: Mission[] = [
         "type_specifics": {
             "extra_info": "0 green cards is allowed",
             "left": "P",
-            "right": "G",
+            "right": ["G"],
             "comparisson": ">",
             "in_one_trick": false
         }
@@ -425,7 +425,7 @@ export const allMissions: Mission[] = [
         "type": "more_or_less",
         "type_specifics": {
             "left": "I",
-            "right": "ANYONE",
+            "right": ["ANYONE"],
             "comparisson": "<",
             "in_one_trick": false
         }
@@ -440,7 +440,7 @@ export const allMissions: Mission[] = [
         "type": "more_or_less",
         "type_specifics": {
             "left": "I",
-            "right": "COMMANDER",
+            "right": ["COMMANDER"],
             "comparisson": "<",
             "in_one_trick": false
         }
@@ -455,7 +455,7 @@ export const allMissions: Mission[] = [
         "type": "more_or_less",
         "type_specifics": {
             "left": "I",
-            "right": "ANYONE_COMBINED",
+            "right": ["ANYONE_COMBINED"],
             "comparisson": ">",
             "in_one_trick": false
         }
@@ -471,7 +471,7 @@ export const allMissions: Mission[] = [
         "type_specifics": {
             "extra_info": "0 yellow/pink cards is not allowed",
             "left": "P",
-            "right": "Y",
+            "right": ["Y"],
             "comparisson": "=",
             "in_one_trick": false
         }
@@ -487,7 +487,7 @@ export const allMissions: Mission[] = [
         "type_specifics": {
             "extra_info": "0 green/yellow cards is not allowed",
             "left": "G",
-            "right": "Y",
+            "right": ["Y"],
             "comparisson": "=",
             "in_one_trick": true
         }
@@ -503,7 +503,7 @@ export const allMissions: Mission[] = [
         "type_specifics": {
             "extra_info": "0 pink/blue cards not allowed",
             "left": "P",
-            "right": "B",
+            "right": ["B"],
             "comparisson": "=",
             "in_one_trick": true
         }
@@ -519,9 +519,10 @@ export const allMissions: Mission[] = [
         "type_specifics": {
             "extra_info": "Submarines are not allowed in the trick",
             "left": "ALL_CARDS",
-            "right": 7,
+            "right": [7],
             "comparisson": "<",
-            "in_one_trick": true
+            "in_one_trick": true,
+            "different_spelling": true
         }
     },
     {
@@ -534,9 +535,10 @@ export const allMissions: Mission[] = [
         "type": "more_or_less",
         "type_specifics": {
             "left": "ALL_CARDS",
-            "right": 5,
+            "right": [5],
             "comparisson": ">",
-            "in_one_trick": true
+            "in_one_trick": true,
+            "different_spelling": true
         }
     },
     {
@@ -556,7 +558,8 @@ export const allMissions: Mission[] = [
                 16
             ],
             "comparisson": "<",
-            "in_one_trick": true
+            "in_one_trick": true,
+            "different_spelling": true
         }
     },
     {
@@ -575,8 +578,9 @@ export const allMissions: Mission[] = [
                 28,
                 31
             ],
-            "comparisson": "<",
-            "in_one_trick": true
+            "comparisson": ">",
+            "in_one_trick": true,
+            "different_spelling": true
         }
     },
     {
@@ -590,7 +594,7 @@ export const allMissions: Mission[] = [
         "type_specifics": {
             "extra_info": "Submarines are not allowed in the trick",
             "left": "SUM",
-            "right": "22/23",
+            "right": ["22/23"],
             "comparisson": "=",
             "in_one_trick": true
         }
@@ -1502,7 +1506,7 @@ export const allMissions: Mission[] = [
         ],
         "type": "using",
         "type_specifics": {
-            "right": "X5"
+            "right": ["X5"]
         }
     },
     {
@@ -1515,7 +1519,7 @@ export const allMissions: Mission[] = [
         "type": "using",
         "type_specifics": {
             "left": "X6",
-            "right": "X6"
+            "right": ["X6"]
         }
     },
     {
@@ -1528,7 +1532,7 @@ export const allMissions: Mission[] = [
         "type": "using",
         "type_specifics": {
             "left": "X5",
-            "right": "X7"
+            "right": ["X7"]
         }
     },
     {
@@ -1541,7 +1545,7 @@ export const allMissions: Mission[] = [
         "type": "using",
         "type_specifics": {
             "left": "X8",
-            "right": "X4"
+            "right": ["X4"]
         }
     },
     {
@@ -1553,7 +1557,7 @@ export const allMissions: Mission[] = [
         ],
         "type": "using",
         "type_specifics": {
-            "right": "X2"
+            "right": ["X2"]
         }
     },
     {
@@ -1565,7 +1569,7 @@ export const allMissions: Mission[] = [
         ],
         "type": "using",
         "type_specifics": {
-            "right": "X3"
+            "right": ["X3"]
         }
     },
     {
@@ -1577,7 +1581,7 @@ export const allMissions: Mission[] = [
         ],
         "type": "using",
         "type_specifics": {
-            "right": "X6"
+            "right": ["X6"]
         }
     },
     {
@@ -1590,7 +1594,7 @@ export const allMissions: Mission[] = [
         "type": "using",
         "type_specifics": {
             "left": "G9",
-            "right": "S"
+            "right": ["S"]
         }
     },
     {
@@ -1603,7 +1607,7 @@ export const allMissions: Mission[] = [
         "type": "using",
         "type_specifics": {
             "left": "P7",
-            "right": "S"
+            "right": ["S"]
         }
     }
 ]
