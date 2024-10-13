@@ -19,7 +19,6 @@ export interface MissionCardProps {
 
 export default function MissionCard(props: MissionCardProps) {
     const players = gameStore.use.players()
-    const [selectedPlayer, setSelectedPlayer] = useState<PlayerInfo | undefined>(undefined)
     const isRegularPlayingCards = gameStore.use.isRegularPlayingCards()
     const specific_cards = props.mission.type_specifics?.specific_cards ?? []
     const isExactly = props.mission.type_specifics?.exactly!
@@ -27,6 +26,9 @@ export default function MissionCard(props: MissionCardProps) {
     const hasDuplicates = Array.from(new Set(specific_cards)).length - specific_cards.length != 0
     const position = props.mission.type_specifics?.position!
     const inRow = props.mission.type_specifics?.in_row
+    const assignedPlayers = gameStore.use.assignedPlayers()
+    const assignPlayer = gameStore.use.assignPlayer()
+    const missionAssignedPlayer = assignedPlayers[props.mission.cardText]
 
 
     const cardElements: { [key: string]: JSX.Element } = {
@@ -60,12 +62,12 @@ export default function MissionCard(props: MissionCardProps) {
             <Divider className='mt-1 mb-1' />
             <Stack className='w-full'>
                 {
-                    selectedPlayer ?
+                    missionAssignedPlayer ?
                         <Stack direction='row' className='justify-center items-center space-x-3'>
-                            <span className='underline'>{selectedPlayer.name}</span>
-                            <Button size='small' onClick={() => setSelectedPlayer(undefined)}>Change</Button>
+                            <span className='underline'>{missionAssignedPlayer.name}</span>
+                            <Button size='small' onClick={() => assignPlayer(undefined, props.mission)}>Change</Button>
                         </Stack> :
-                        players.map((p, i) => <span key={i} className='cursor-pointer hover:underline' onClick={() => setSelectedPlayer(p)}>{p.name}</span>)
+                        players.map((p, i) => <span key={i} className='cursor-pointer hover:underline' onClick={() => assignPlayer(p, props.mission)}>{p.name}</span>)
                 }
             </Stack>
         </Paper>

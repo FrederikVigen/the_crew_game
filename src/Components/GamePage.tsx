@@ -12,7 +12,8 @@ export default function GamePage() {
   const missions = gameStore.use.missions()
   const difficulty = gameStore.use.difficulty()
   const endGame = gameStore.use.endGame()
-  const isRegularPlayingCards = gameStore.use.isRegularPlayingCards()
+  const resetGame = gameStore.use.resetGame()
+  // const isRegularPlayingCards = gameStore.use.isRegularPlayingCards()
 
   return (
     <Stack className='items-center w-3/4 z-10' spacing={3}>
@@ -25,7 +26,11 @@ export default function GamePage() {
           missions.map(m => <MissionCard mission={m} />)
         }
       </div>
-      <Button onClick={endGame}>End Game</Button>
+      <Stack direction='row' spacing={3}>
+        <Button onClick={endGame}>End Game</Button>
+        <Button onClick={resetGame}>Reset Game</Button>
+        <Button onClick={endGame}>Restart Game</Button>
+      </Stack>
     </Stack>
   )
 }

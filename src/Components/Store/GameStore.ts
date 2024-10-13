@@ -18,8 +18,11 @@ interface GameStore {
     updateDifficulty: (newDifficulty: number) => void
     missions: Mission[]
     endGame: () => void
+    assignedPlayers: {[cardText: string]: PlayerInfo | undefined}
+    assignPlayer: (playerInfo : PlayerInfo | undefined, mission: Mission) => void
     isRegularPlayingCards: boolean
     setIsRegularPlayingCards: (isRegularPlayingCards: boolean) => void
+    resetGame: () => void
 }
 
 const useGameStore = create<GameStore>((set) => ({
@@ -39,6 +42,7 @@ const useGameStore = create<GameStore>((set) => ({
     error: "",
     gameStarted: false,
     isRegularPlayingCards: false,
+    assignedPlayers: {},
     addPlayer: (newPlayer: PlayerInfo) => set(produce((state: GameStore) => {
         if(state.players.length >= 5) {
             return
@@ -85,6 +89,12 @@ const useGameStore = create<GameStore>((set) => ({
     })),
     setIsRegularPlayingCards: (isRegularPlayingCards: boolean) => set(produce((state: GameStore) => {
         state.isRegularPlayingCards = isRegularPlayingCards
+    })),
+    assignPlayer: (playerInfo: PlayerInfo | undefined, mission: Mission) => set(produce((state: GameStore) => {
+        state.assignedPlayers[mission.cardText] = playerInfo
+    })),
+    resetGame: () => set(produce((state: GameStore) => {
+        state.assignedPlayers = {}
     }))
 }))
 
