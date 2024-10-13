@@ -695,7 +695,7 @@ export const allMissions: Mission[] = [
         ],
         "type": "specific",
         "type_specifics": {
-            "exactly": false,
+            "exactly": true,
             "position": null,
             "not_win": false,
             "specific_cards": [
@@ -751,7 +751,7 @@ export const allMissions: Mission[] = [
         ],
         "type": "specific",
         "type_specifics": {
-            "exactly": false,
+            "exactly": true,
             "position": null,
             "not_win": false,
             "specific_cards": [
@@ -846,7 +846,7 @@ export const allMissions: Mission[] = [
         }
     },
     {
-        "cardText": "I will win pink 8 and bue 5",
+        "cardText": "I will win pink 8 and blue 5",
         "difficulties": [
             2,
             2,
@@ -1036,7 +1036,7 @@ export const allMissions: Mission[] = [
         ],
         "type": "specific",
         "type_specifics": {
-            "exactly": true,
+            "exactly": false,
             "position": null,
             "not_win": false,
             "specific_cards": [
@@ -1059,14 +1059,14 @@ export const allMissions: Mission[] = [
             "not_win": false,
             "extra_info": "If submarine cards 1,2,3,4 are in one hand re-deal the playing cards",
             "specific_cards": [
-                "S",
-                "S",
-                "S"
+                "XS",
+                "XS",
+                "XS",
             ]
         }
     },
     {
-        "cardText": "I will win exactly no submarines",
+        "cardText": "I will win no submarines",
         "difficulties": [
             1,
             1,
@@ -1078,7 +1078,7 @@ export const allMissions: Mission[] = [
             "position": null,
             "not_win": true,
             "specific_cards": [
-                "S"
+                "XS"
             ]
         }
     },
@@ -1319,8 +1319,8 @@ export const allMissions: Mission[] = [
             "not_win": false,
             "extra_info": "If submarines 2,3,4 are in one hand, re-deal the playing cards",
             "specific_cards": [
-                "S",
-                "S"
+                "XS",
+                "XS"
             ]
         }
     },
@@ -1338,7 +1338,7 @@ export const allMissions: Mission[] = [
             "not_win": false,
             "extra_info": "If submarine cards 1,2,3,4 are in one hand, re-deal the playing cards",
             "specific_cards": [
-                "S"
+                "XS"
             ]
         }
     },

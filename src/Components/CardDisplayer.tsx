@@ -36,14 +36,12 @@ export default function CardDisplayer(props: CardDisplayer) {
     3: [['-15px', '35%'], ['0px', '0px'], ['90px', '35%']],
     4: [['90px', '35%'], ['90px', '35%'], ['90px', '35%'],[ '90px', '35%']]
   }[totalCardsToDisplay]
-  console.log(Object.keys(cardCount))
 
   return (
     <div className="relative w-[90px] h-[140px]">
       {
         Object.keys(cardCount).map((key, i) => {
           const translatedCard = translateCard(key)
-          console.log(key, translatedCard)
           const count = cardCount[key]
           return (
             <>

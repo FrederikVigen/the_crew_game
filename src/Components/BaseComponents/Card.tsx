@@ -14,6 +14,7 @@ export default function Card(props: CardProps) {
     const cardSvg = Deck[(props.value ?? '') + props.suit]
     const { className, style, ...propsWithNoClass } = props
     const xCards = [Deck[props.value + 'H'], Deck[props.value + 'C'], Deck[props.value + 'S'], Deck[props.value + 'D']]
+    const allTrumphs = [Deck['QS'],Deck['TS'],Deck['KS'],Deck['JS']]
     const newStyle = {
         ...style,
         width: `${props.width ?? '175px'}`,
@@ -27,7 +28,7 @@ export default function Card(props: CardProps) {
             }
             {
                 props.suit == 'X' && !props.flipped &&
-                xCards.map((s, i) => {
+                (props.value == 'S' ? allTrumphs : xCards).map((s, i) => {
                     const top = i == 3 || i == 4 ? '50%' : '0'
                     const bottom = i == 1 || i == 2 ? '50%' : '0'
                     const right = i == 1 || i == 3 ? '50%' : '0'
