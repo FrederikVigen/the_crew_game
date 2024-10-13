@@ -13,6 +13,7 @@ export default function GamePage() {
   const difficulty = gameStore.use.difficulty()
   const endGame = gameStore.use.endGame()
   const resetGame = gameStore.use.resetGame()
+  const startGame = gameStore.use.startGame()
   // const isRegularPlayingCards = gameStore.use.isRegularPlayingCards()
 
   return (
@@ -29,7 +30,7 @@ export default function GamePage() {
       <Stack direction='row' spacing={3}>
         <Button onClick={endGame}>End Game</Button>
         <Button onClick={resetGame}>Reset Game</Button>
-        <Button onClick={endGame}>Restart Game</Button>
+        <Button onClick={startGame}>Draw new mission cards</Button>
       </Stack>
     </Stack>
   )
