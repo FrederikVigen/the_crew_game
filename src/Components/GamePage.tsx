@@ -23,7 +23,8 @@ export default function GamePage() {
       <div className='flex justify-center flex-col w-full space-y-3 md:*:mt-3 md:space-x-3 md:flex-row md:flex-wrap'>
         {
           // missions.filter(m => m.type == 'trick_winning').map(m => <MissionCard mission={m} />)
-          missions.filter(m => m.type == 'not_opening').map(m => <MissionCard mission={m} />)
+          missions.filter(m => m.type == 'using').map(m => <MissionCard mission={m} />)
+          // missions.filter(m => m.type == 'not_opening').map(m => <MissionCard mission={m} />)
           // missions.filter(m => m.type == 'even_odd').map(m => <MissionCard mission={m} />)
           // missions.filter(m => m.type == 'more_or_less').map(m => <MissionCard mission={m} />)
           // missions.filter(m => m.type == 'all_of_one').map(m => <MissionCard mission={m} />)

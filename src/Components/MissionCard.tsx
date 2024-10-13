@@ -11,6 +11,7 @@ import TrickWinningMission from './CardTypes/TrickWinningMission'
 import EvenOdd from './CardTypes/EvenOdd'
 import MoreLess from './CardTypes/MoreLess'
 import NotOpeningMission from './CardTypes/NotOpeningMission'
+import UsingMission from './CardTypes/UsingMission'
 
 export interface MissionCardProps {
     mission: Mission
@@ -35,14 +36,15 @@ export default function MissionCard(props: MissionCardProps) {
         'even_odd': <EvenOdd mission={props.mission}/>,
         'all_of_one': <span className='text-2xl'>All the cards in at least one of the 4 colors</span>,
         'not_opening': <NotOpeningMission mission={props.mission}/>,
-        'using': <></>
+        'using': <UsingMission mission={props.mission}/>
     }
 
 
     const cardHeader = [
-        'I', 'will',
+        props.mission.type != 'using' ? 'I' : '',
+        props.mission.type != 'using' ? 'will' : '',
         isNot && (specific_cards.length > 1 || inRow || props.mission.type == 'not_opening') ? (props.mission.type == 'trick_winning' ? 'never' : 'not') : '',
-        props.mission.type == 'not_opening' ? '' : 'win',
+        props.mission.type == 'not_opening' || props.mission.type == 'using' ? '' : 'win',
         isNot && specific_cards.length <= 1 && !inRow ? (props.mission.type == 'trick_winning' ? 'none of' : 'no') : '',
         (isExactly && !isNot) ? ' exactly' : '',
         (specific_cards.length > 1 && !isExactly && hasDuplicates) ? ' at least' : ''

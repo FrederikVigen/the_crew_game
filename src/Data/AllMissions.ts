@@ -1596,7 +1596,7 @@ export const allMissions: Mission[] = [
         "type": "using",
         "type_specifics": {
             "left": "G9",
-            "right": ["S"]
+            "right": ["XS"]
         }
     },
     {
@@ -1609,7 +1609,7 @@ export const allMissions: Mission[] = [
         "type": "using",
         "type_specifics": {
             "left": "P7",
-            "right": ["S"]
+            "right": ["XS"]
         }
     }
 ]
