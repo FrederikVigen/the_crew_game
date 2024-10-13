@@ -20,7 +20,7 @@ export const MainContainer = tw.div `
     before:rotate-[30deg]
     before:bg-top
     before:w-[1000vh]
-    before:h-[100%]
+    before:h-[1000vh]
     before:bg-no-repeat
     after:content-['']
     after:absolute
