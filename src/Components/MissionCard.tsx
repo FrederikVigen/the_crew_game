@@ -52,8 +52,8 @@ export default function MissionCard(props: MissionCardProps) {
 
 
     return (
-        <Paper className='w-full md:w-[175px] h-[390px]'>
-            <Stack className='w-full md:h-2/3 text-center'>
+        <Paper className='w-full md:w-[175px]'>
+            <Stack className='w-full md:h-[230px] text-center'>
                 <span className='mb-1 text-xl'>{cardHeader.join(" ")}</span>
                 {cardElements[props.mission.type]}
             </Stack>
@@ -67,7 +67,6 @@ export default function MissionCard(props: MissionCardProps) {
                         </Stack> :
                         players.map((p, i) => <span key={i} className='cursor-pointer hover:underline' onClick={() => setSelectedPlayer(p)}>{p.name}</span>)
                 }
-                <div>{props.mission.cardText}</div>
             </Stack>
         </Paper>
     )

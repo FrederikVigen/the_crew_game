@@ -25,25 +25,19 @@ interface GameStore {
 const useGameStore = create<GameStore>((set) => ({
     players: [
         {
-            name: 'Frede'
+            name: ''
         },
         {
-            name: 'Anton'
+            name: ''
         },
         {
-            name: 'Sujee'
+            name: ''
         },
-        {
-            name: 'Sujee'
-        },
-        {
-            name: 'Sujee'
-        }
     ],
-    missions: allMissions,
-    difficulty: 15,
+    missions: [],
+    difficulty: 1,
     error: "",
-    gameStarted: true,
+    gameStarted: false,
     isRegularPlayingCards: false,
     addPlayer: (newPlayer: PlayerInfo) => set(produce((state: GameStore) => {
         if(state.players.length >= 5) {
