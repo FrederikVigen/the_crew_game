@@ -8,6 +8,7 @@ import { PlayerInfo } from './Models/PlayerInfo'
 import { Button } from './BaseComponents/Button'
 import SpecificMission from './CardTypes/SpecificMission'
 import TrickWinningMission from './CardTypes/TrickWinningMission'
+import EvenOdd from './CardTypes/EvenOdd'
 
 export interface MissionCardProps {
     mission: Mission
@@ -29,8 +30,8 @@ export default function MissionCard(props: MissionCardProps) {
         'trick_winning': <TrickWinningMission mission={props.mission} />,
         'more_or_less': <></>,
         'specific': <SpecificMission mission={props.mission} />,
-        'even_odd': <></>,
-        'all_of_one': <></>,
+        'even_odd': <EvenOdd mission={props.mission}/>,
+        'all_of_one': <span className='text-2xl'>All the cards in at least one of the 4 colors</span>,
         'not_opening': <></>,
         'using': <></>
     }
@@ -47,7 +48,7 @@ export default function MissionCard(props: MissionCardProps) {
 
 
     return (
-        <Paper className='w-full md:w-[175px] h-[350px]'>
+        <Paper className='w-full md:w-[175px] h-[390px]'>
             <Stack className='w-full md:h-2/3 text-center'>
                 <span className='mb-1 text-xl'>{cardHeader.join(" ")}</span>
                 {cardElements[props.mission.type]}
@@ -63,7 +64,7 @@ export default function MissionCard(props: MissionCardProps) {
                         </Stack> :
                         players.map((p, i) => <span key={i} className='cursor-pointer hover:underline' onClick={() => setSelectedPlayer(p)}>{p.name}</span>)
                 }
-                <div>{props.mission.cardText}</div>
+                {/* <div>{props.mission.cardText}</div> */}
             </Stack>
         </Paper>
     )

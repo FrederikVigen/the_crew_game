@@ -32,6 +32,12 @@ const useGameStore = create<GameStore>((set) => ({
         },
         {
             name: 'Sujee'
+        },
+        {
+            name: 'Sujee'
+        },
+        {
+            name: 'Sujee'
         }
     ],
     missions: allMissions,

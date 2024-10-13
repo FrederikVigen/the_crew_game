@@ -3,7 +3,7 @@ import { translateCard } from "./Services/PlayingCardTranslator"
 
 export interface CardDisplayer {
   cards: string[]
-  displayBadge: boolean
+  displayBadge?: boolean
 }
 
 export default function CardDisplayer(props: CardDisplayer) {
@@ -18,7 +18,8 @@ export default function CardDisplayer(props: CardDisplayer) {
     1: [0],
     2: [-12.5, 12.5],
     3: [0, 0, 0],
-    4: [0, 0, 0, 0]
+    4: [0, 0, 0, 0],
+    5: [0, 0, 0, 0, 0]
   }[totalCardsToDisplay]
 
   const translation: number[] | undefined = {
@@ -26,7 +27,8 @@ export default function CardDisplayer(props: CardDisplayer) {
     1: [0],
     2: [-15, 15],
     3: [-20, 0, 20],
-    4: [-30, -10, 10, 30]
+    4: [-30, -10, 10, 30],
+    5: [-35, -17.5, 0, 17.5, 35]
   }[totalCardsToDisplay]
 
   const badgePosition: string[][] | undefined = {
