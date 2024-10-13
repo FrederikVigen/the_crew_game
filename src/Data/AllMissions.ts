@@ -1475,6 +1475,7 @@ export const allMissions: Mission[] = [
         ],
         "type": "not_opening",
         "type_specifics": {
+            "not_win": true,
             "specific_cards": [
                 "P",
                 "G"
@@ -1490,6 +1491,7 @@ export const allMissions: Mission[] = [
         ],
         "type": "not_opening",
         "type_specifics": {
+            "not_win": true,
             "specific_cards": [
                 "P",
                 "Y",

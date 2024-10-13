@@ -10,6 +10,7 @@ import SpecificMission from './CardTypes/SpecificMission'
 import TrickWinningMission from './CardTypes/TrickWinningMission'
 import EvenOdd from './CardTypes/EvenOdd'
 import MoreLess from './CardTypes/MoreLess'
+import NotOpeningMission from './CardTypes/NotOpeningMission'
 
 export interface MissionCardProps {
     mission: Mission
@@ -33,15 +34,15 @@ export default function MissionCard(props: MissionCardProps) {
         'specific': <SpecificMission mission={props.mission} />,
         'even_odd': <EvenOdd mission={props.mission}/>,
         'all_of_one': <span className='text-2xl'>All the cards in at least one of the 4 colors</span>,
-        'not_opening': <></>,
+        'not_opening': <NotOpeningMission mission={props.mission}/>,
         'using': <></>
     }
 
 
     const cardHeader = [
         'I', 'will',
-        isNot && (specific_cards.length > 1 || inRow) ? (props.mission.type == 'trick_winning' ? 'never' : 'not') : '',
-        'win',
+        isNot && (specific_cards.length > 1 || inRow || props.mission.type == 'not_opening') ? (props.mission.type == 'trick_winning' ? 'never' : 'not') : '',
+        props.mission.type == 'not_opening' ? '' : 'win',
         isNot && specific_cards.length <= 1 && !inRow ? (props.mission.type == 'trick_winning' ? 'none of' : 'no') : '',
         (isExactly && !isNot) ? ' exactly' : '',
         (specific_cards.length > 1 && !isExactly && hasDuplicates) ? ' at least' : ''
@@ -64,7 +65,7 @@ export default function MissionCard(props: MissionCardProps) {
                         </Stack> :
                         players.map((p, i) => <span key={i} className='cursor-pointer hover:underline' onClick={() => setSelectedPlayer(p)}>{p.name}</span>)
                 }
-                {/* <div>{props.mission.cardText}</div> */}
+                <div>{props.mission.cardText}</div>
             </Stack>
         </Paper>
     )
